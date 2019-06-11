@@ -48,3 +48,12 @@ for i in range(len(l)):
 l_duplicate = [x for x in set(l) if d[x] > 1]
 print(l_duplicate)
 # [1, 2, 3]
+
+from functools import lru_cache
+
+@lru_cache(maxsize=1000)
+def fib_memoized(n):
+    if n < 2:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
