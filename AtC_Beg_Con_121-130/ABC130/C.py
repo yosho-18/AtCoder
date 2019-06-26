@@ -22,4 +22,9 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-n, a, b, c = wi()
+W, H, x, y = wi()
+ans = (H * W) / 2
+if x == W / 2 and y == H / 2:
+    print(ans, 1)
+else:
+    print(ans, 0)

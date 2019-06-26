@@ -54,6 +54,32 @@ for i in range(6):
     if u.same_check(i, (a[i] - 1)):
         count += 1
 print(count)
+
+
+class UnionFindTree:
+    def __init__(self, size):
+        self.parent = list(range(size))
+        self.age = [0] * size
+
+    def find_root(self, x):
+        if self.parent[x] == x:
+            return x, 0
+        else:
+            self.parent[x], d = self.find_root(self.parent[x])
+            self.age[x] += d
+            return self.parent[x], self.age[x]
+
+    def union(self, x, y, d):
+        r1, d1 = self.find_root(x)
+        r2, d2 = self.find_root(y)
+        if r1 != r2:
+            self.parent[r2] = r1
+            self.age[r2] = (d1 - d2) + d
+        else:
+            if (d2 - d1) != d:
+                return False
+        return True
+    
 """class UnionFind:
     def __init__(self, n):
         # 親要素のノード番号を格納。par[x] == xの時そのノードは根

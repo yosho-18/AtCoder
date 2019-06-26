@@ -5,7 +5,12 @@
     <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Ant_Book" />
-    <orderEntry type="module" module-name="LINE_Web_Skill_Test" />
+    <orderEntry type="module" module-name="LINE" />
+    <orderEntry type="module" module-name="RECRUIT" />
+    <orderEntry type="module" module-name="Yahoo" />
+    <orderEntry type="module" module-name="python-machine-learning-book-2nd-edition" />
+    <orderEntry type="module" module-name="numpy_collection" />
+    <orderEntry type="module" module-name="ICPC" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="pytest" />
