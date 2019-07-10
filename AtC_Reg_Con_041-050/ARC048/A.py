@@ -21,32 +21,8 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-a = i()
-b = i()
-c = i()
-
-if max(a, b, c) == a:
-    print(1)
-    if b > c:
-        print(2)
-        print(3)
-    else:
-        print(3)
-        print(2)
-elif max(a, b, c) == b:
-    if a > c:
-        print(2)
-        print(1)
-        print(3)
-    else:
-        print(3)
-        print(1)
-        print(2)
+a, b = wi()
+if a * b < 0:
+    print(b - a - 1)
 else:
-    if a > b:
-        print(2)
-        print(3)
-    else:
-        print(3)
-        print(2)
-    print(1)
+    print(b - a)

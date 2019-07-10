@@ -19,3 +19,9 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
+R, B = wi()
+x, y = wi()
+if x == 1 and y == 1:
+    print(min(R, B))
+else:
+    print(max(0, R / x, B, R, B / y, (R * (y - 1) + B * (x - 1)) / (x * y - 1)))
