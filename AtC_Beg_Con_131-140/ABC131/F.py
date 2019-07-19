@@ -22,13 +22,4 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-n, l = wi()
-a = []
-for i in range(n):
-    a.append(l + i)
-sumn = sum(a)
-b = []
-for i in range(n):
-    b.append([abs(sumn - (sumn - (l + i))), sumn - (l + i)])
-b.sort()
-print(b[0][1])
+n, k = wi()
