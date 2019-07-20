@@ -24,39 +24,13 @@ def ms(n): return [ws() for _ in range(n)]
 
 n, m, k = wi()
 
-tmp = 0
-for j in range(m):
-    if j <= (m - 1) // 2:
-        tmp += (j * (j + 1) + ((m - 1 - j) * (m - 1 - j + 1)) // 2) * n ** 2
-        tmp = tmp % mod
-        ans += (j * (j + 1) + ((m - 1 - j) * (m - 1 - j + 1)) // 2) * n ** 2
-    elif j == (m - 1) // 2:
-        ans += (j * (j + 1)) * n ** 2
-    else:
-        ans += tmp
-        if m % 2 != 0:
-            ans -= (((m - 1) // 2) * (((m - 1) // 2) + 1)) * n ** 2
-        break
-    ans = ans % mod
-ans = ans % mod
-
-tmp = 0
 for i in range(n):
-    if i <= (n - 1) // 2:
-        tmp += (i * (i + 1) + ((n - 1 - i) * (n - 1 - i + 1)) // 2) * m ** 2
-        tmp = tmp % mod
-        ans += (i * (i + 1) + ((n - 1 - i) * (n - 1 - i + 1)) // 2) * m ** 2
-    elif i == (n - 1) // 2:
-        ans += (i * (i + 1)) * m ** 2
-    else:
-        ans += tmp
-        if n % 2 != 0:
-            ans -= (((n - 1) // 2) * (((n - 1) // 2) + 1)) * m ** 2
-        break
-        break
+    ans += m ** 2 * i * (n - i)
     ans = ans % mod
-ans = ans % mod
-ans = ans // 2
+
+for j in range(m):
+    ans += n ** 2 * j * (m - j)
+    ans = ans % mod
 
 MAX_N = 3 * 10 ** 5 + 100
 factorial = [1] * MAX_N
@@ -75,6 +49,6 @@ def comb(n, k):
 # 階乗を用意
 calc_factorial()
 
-ans *= comb(n * m, k - 2)
+ans *= comb(n * m - 2, k - 2)
 print(ans % mod)
 

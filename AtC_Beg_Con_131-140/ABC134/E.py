@@ -24,15 +24,13 @@ def ms(n): return [ws() for _ in range(n)]
 
 n = i()
 a = hi(n)
-maxa = max(a)
-b = sorted(a, reverse=True)
-snda = b[1]
-if maxa == snda:
-    for i in range(n):
-        print(maxa)
-else:
-    for i in range(n):
-        if maxa == a[i]:
-            print(snda)
-        else:
-            print(maxa)
+ans = 1
+D = deque()
+D.append(a[0])
+for i in range(1, n):
+    index = bisect_left(D, a[i])
+    if 0 == index:
+        D.appendleft(a[i])
+    else:
+        D[index - 1] = a[i]
+print(len(D))

@@ -22,11 +22,44 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-n, q = wi()
-stx = wi(n)
-d = hi(q)
-kukann = [[0, 0]] * n
-for i in range(n):
-    kukann[i][0] = stx[i][0] - stx[i][2]
-    kukann[i][1] = stx[i][1] - stx[i][2]
+N, Q = wi()
+stx = mi(N)
+D = hi(Q)
+kukann = [[0, 0, 0] for _ in range(N)]
+for i in range(N):
+    kukann[i][1] = stx[i][0] - stx[i][2]
+    kukann[i][2] = stx[i][1] - stx[i][2]
+    kukann[i][0] = stx[i][2]
 
+
+kukann.sort()
+
+ans = [-1] * Q
+skip = [-1] * Q
+for pos, start, end in kukann:#kukannから考える，時間計算量が最悪２乗
+    left = bisect_left(D, start)
+    right = bisect_left(D, end)
+
+    while left < right:
+        if skip[left] == -1:
+            ans[left] = pos
+            skip[left] = right
+            left += 1
+        else:
+            left = skip[left]
+
+print(*ans, sep='\n')
+
+"""
+4 6
+1 2 1
+2 4 2
+3 6 3
+4 8 4
+0
+1
+2
+3
+4
+5
+"""
