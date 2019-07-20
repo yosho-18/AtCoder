@@ -2,6 +2,7 @@ N0 = 2**(N-1).bit_length()
 INF = 2**31-1
 data = [INF]*(2*N0)
 
+# 前計算
 I = []; J = []
 for x in range(N0, 2*N0+1):
     y = (x // (x & -x)) >> 1
