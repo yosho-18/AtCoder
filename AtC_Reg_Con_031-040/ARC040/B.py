@@ -19,3 +19,22 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
+n, r = wi()
+s = list(s())
+hit_cnt = 0
+end = 0
+for i in range(n - 1, -1, -1):
+    if s[i] == ".":
+        st = max(0, i - r + 1)
+        end = st
+        break
+
+
+for i in range(n - 1, -1, -1):
+    if s[i] == ".":
+        hit_cnt += 1
+        st = max(0, i - r + 1)
+        for paint in range(st, i + 1):
+            s[paint] = "o"
+
+print(end + hit_cnt)

@@ -18,3 +18,22 @@ def hs(n): return [s() for _ in range(n)]#HeightString
 def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
+
+A, B = ws()
+moto = list(A + B)
+ansli.append(int(A) - int(B))
+for i in range(6):
+    for j in range(10):
+        if j == 0:
+            if i != 0 and i != 3:
+                tmp = moto.copy()
+                tmp[i] = str(j)
+                X, Y = int(''.join(tmp[0:3])), int(''.join(tmp[3:6]))
+                ansli.append(X - Y)
+        else:
+            tmp = moto.copy()
+            tmp[i] = str(j)
+            X, Y = int(''.join(tmp[0:3])), int(''.join(tmp[3:6]))
+            ansli.append(X - Y)
+
+print(max(ansli))

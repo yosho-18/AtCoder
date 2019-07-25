@@ -1,5 +1,6 @@
 from functools import reduce
 import math
+#nHr=n+r-1Cr
 def comb(n, r):
     return math.factorial(n) // (math.factorial(n - r) * math.factorial(r))
 def permutations_count(n, r):
