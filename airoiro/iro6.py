@@ -14,7 +14,7 @@ import bisect
 a = [1, 2, 3, 5, 6, 7, 8, 9]
 bisect.bisect_left(a, 4)#挿入するindexを返す（挿入はしない）
 >>> 3
-bisect.bisect_left(a, 5)
+bisect.bisect_left(a, 5)#同じ値があるときにどちらに置くか
 >>> 3
 bisect.bisect_right(a, 5)
 >>> 4
