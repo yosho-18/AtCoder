@@ -20,6 +20,7 @@ def isOK(mid):
         return True
 
 #汎用的な二分探索のテンプレ
+#条件を満たす最小値（ng,ok）
 def binary_search():
     ng = -1 #「index = 0」が条件を満たすこともあるので、初期値は -1
     ok = 10 ** 15 #「index = a.size()-1」が条件を満たさないこともあるので、初期値は a.size()
