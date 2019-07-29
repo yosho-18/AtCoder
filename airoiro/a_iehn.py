@@ -16,9 +16,11 @@ def wip(): return [int(x) - 1 for x in sys.stdin.readline().split()]#WideIntPoin
 def ws(): return sys.stdin.readline().split()
 def i(): return int(sys.stdin.readline())
 def s(): return input()
+def s_list(): return list(input())
 def hi(n): return [i() for _ in range(n)]
 def hs(n): return [s() for _ in range(n)]#HeightString
 def mi(n): return [wi() for _ in range(n)]#MatrixInt
+def num__grid(n): return [[int(i) for i in sys.stdin.readline().split()[0]] for _ in range(n)]#NumberGrid
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
-
+def grid(n): return [s_list() for _ in range(n)]

@@ -46,6 +46,11 @@ u.union(2,1)
 u.union(5,4)
 u.union(5,6)
 u.union(2,4)
+u = UnionFind(n)
+for i in range(m):
+    u.union(ab[i][0], ab[i][1])
+
+
 
 #print(u.parent)
 a = [5,3,1,4,2,6]
