@@ -139,6 +139,7 @@ print(''.join(ss))
 5.1 % 1 = 0.09999999999999964
 input().replace("2017", "2018")
 s = ''.join(s)
+" ".join(map(str, ansli[i]))
 src = [int(input()) for i in range(N)]
 ctr = Counter(src)
 print(len(ctr.items()))
