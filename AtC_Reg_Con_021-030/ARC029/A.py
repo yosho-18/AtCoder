@@ -2,7 +2,7 @@ import math, string, itertools, fractions, heapq, collections, re, array, bisect
 from collections import deque, defaultdict, Counter; from heapq import heappush, heappop
 from itertools import permutations, combinations, product, accumulate, groupby
 from bisect import bisect_left, bisect_right, insort_left, insort_right; sys.setrecursionlimit(10 ** 7)
-inf = 10 ** 20; INF = float("INF"); ans = 0; tmp = 0; ansli = []; tmpli = []; candili = []
+inf = 10 ** 20; INF = float("INF"); ans = INF; tmp = 0; ansli = []; tmpli = []; candili = []
 eps = 1.0 / 10 ** 10; mod = 10 ** 9 + 7
 dd = [(-1, 0), (0, 1), (1, 0), (0, -1)]; ddn = dd + [(-1, 1), (1, 1), (1, -1), (-1, -1)]; ddn9 = ddn + [(0, 0)]
 """for dx, dy in dd:
@@ -18,3 +18,18 @@ def hs(n): return [s() for _ in range(n)]#HeightString
 def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
+
+n = i()
+t = hi(n)
+
+nums = [0, 1]
+for meat in itertools.product(nums, repeat=n):#2**n
+    a = 0; b = 0
+    for i in range(n):
+        if meat[i] == 0:
+            a += t[i]
+        else:
+            b += t[i]
+    ans = min(ans, max(a, b))
+
+print(ans)
