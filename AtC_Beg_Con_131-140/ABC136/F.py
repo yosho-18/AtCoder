@@ -24,10 +24,3 @@ def num__grid(n): return [[int(i) for i in sys.stdin.readline().split()[0]] for 
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
-
-n = i()
-
-for i in range(1, n + 1):
-    if len(str(i)) % 2 == 1:
-        ans += 1
-print(ans)
