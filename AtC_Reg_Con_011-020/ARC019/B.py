@@ -18,3 +18,29 @@ def hs(n): return [s() for _ in range(n)]#HeightString
 def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
+
+a = s()
+n = len(a)
+falseli = []
+ans += 25 * n
+
+if n % 2 == 0:
+    for i in range(n // 2):
+        if a[i] == a[-i - 1]:
+            pass
+        else:
+            falseli.append(i)
+    if len(falseli) == 1:
+        ans -= 2
+else:
+    for i in range(n // 2):
+        if a[i] == a[-i - 1]:
+            pass
+        else:
+            falseli.append(i)
+    if len(falseli) == 1:
+        ans -= 2
+    elif len(falseli) == 0:
+        ans -= 25
+
+print(ans)
