@@ -158,3 +158,16 @@ ans = zip(*[i for i in zip(*a) if '#' in i])
 
 
 
+print(d.get('key1'))
+# val1
+
+print(d.get('key5'))
+# None
+#source: dict_get.py
+#None以外の値を返したい場合は、第二引数にキーが存在しない場合に返すデフォルト値を指定する。
+
+print(d.get('key5', 'NO KEY'))
+# NO KEY
+
+print(d.get('key5', 100))
+# 100
