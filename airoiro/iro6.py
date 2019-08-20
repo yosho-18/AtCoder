@@ -2,10 +2,13 @@ from collections import deque
 signstack = deque()
 signstack.pop()
 
-from heapq import heappush, heappop
+from heapq import heappush, heappop, heappushpop
 notfirst =[]
 heappush(notfirst, f[i][1])
+# デフォルトでは最小値を返すので，マイナスをつけて最大値を返すようにする
 donyoku -= heappop(notfirst)
+
+heappushpop(heap, item)  # pshuしてpopする
 
 import itertools
 accua = list(itertools.accumulate(a))
