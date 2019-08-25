@@ -27,3 +27,14 @@ def grid(n): return [s_list() for _ in range(n)]
 
 
 if __name__ == '__main__':
+    n, m = wi()
+    kill_a = wi()
+    kill_b = wi()
+
+    k_sum_a = sum(kill_a)
+    k_sum_b = sum(kill_b)
+    people_a = n
+    people_b = m
+
+    # (k_sum_b + people_a - 1) C (people_a - 1)
+    

@@ -25,5 +25,11 @@ def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
 
+m, d = wi()
 
-if __name__ == '__main__':
+for i in range(1, m + 1):
+    for j in range(20, d + 1):
+        if int(str(j)[0]) >= 2 and int(str(j)[1]) >= 2:
+            if int(str(j)[0]) * int(str(j)[1]) == i:
+                ans += 1
+print(ans)

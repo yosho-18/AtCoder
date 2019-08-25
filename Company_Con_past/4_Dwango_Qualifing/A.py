@@ -27,3 +27,8 @@ def grid(n): return [s_list() for _ in range(n)]
 
 
 if __name__ == '__main__':
+    s = s()
+    if s[0] == s[2] and s[1] == s[3]:
+        print("Yes")
+    else:
+        print("No")

@@ -171,3 +171,5 @@ print(d.get('key5', 'NO KEY'))
 
 print(d.get('key5', 100))
 # 100
+
+functools.reduce(lambda a, b: a + b, overfiveli2)

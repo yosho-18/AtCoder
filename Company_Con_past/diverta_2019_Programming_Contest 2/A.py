@@ -25,5 +25,12 @@ def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
 
-
-if __name__ == '__main__':
+n, k = wi()
+if k == 1:
+    print(0)
+elif n - k == 0:
+    print(0)
+elif n - k < 0:
+    print(1)
+else:
+    print(n - k)

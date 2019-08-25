@@ -25,5 +25,16 @@ def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
 
+n, k = wi()
+a = wi()
 
-if __name__ == '__main__':
+for i in range(n):
+    for j in range(i + 1, n):
+        if a[i] > a[j]:
+            ans += k * (k + 1) // 2
+            ans %= mod
+    for l in range(i):
+        if a[i] > a[l]:
+            ans += (k - 1) * k // 2
+            ans %= mod
+print(ans)

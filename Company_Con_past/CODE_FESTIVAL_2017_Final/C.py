@@ -25,5 +25,41 @@ def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
 
+n = i()
+d = wi()
 
-if __name__ == '__main__':
+time = [[] for _ in range(13)]
+
+for t in d:
+    time[t].append(t)
+
+for idx, kosu in enumerate(time):
+    if len(kosu) >= 3:
+        print(0)
+        exit()
+
+if n > 11:
+    if len(time[0]) >= 1 or len(time[12]) > 1:
+        print(0)
+        exit()
+    else:
+        print(1)
+        exit()
+
+time = functools.reduce(lambda a, b: a + b, time)
+ans = INF; A = 0
+
+for ti in itertools.product([0, 1], repeat=len(time)):  # 11**2
+    kyu = []
+    for kk in range(len(ti)):
+        if ti[kk] == 0:
+            kyu.append(time[kk])
+        else:
+            kyu.append(24 - time[kk])
+    kyu.append(0)
+
+    for k in itertools.combinations(kyu, 2):  # nC2
+        ans = min(ans, abs(k[0] - k[1]), 24 - abs(k[0] - k[1]))
+    A = max(ans, A)
+    ans = INF  # 初期化を忘れない
+print(A)

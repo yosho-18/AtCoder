@@ -27,3 +27,23 @@ def grid(n): return [s_list() for _ in range(n)]
 
 
 if __name__ == '__main__':
+    s = s()
+    candili.append(s[0])
+    if s[0] == "5":
+        print(-1)
+        exit()
+    for i in range(1, len(s)):
+        for j in range(len(candili)):
+            if candili[j] != s[i]:
+                candili[j] = s[i]
+                break
+        else:
+            if s[i] == "2":
+                candili.append(s[i])
+            else:
+                print(-1)
+                exit()
+    if candili.count("2") > 0:
+        print(-1)
+    else:
+        print(len(candili))

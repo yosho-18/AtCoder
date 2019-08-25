@@ -24,6 +24,3 @@ def num_grid(n): return [[int(i) for i in sys.stdin.readline().split()[0]] for _
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
-
-
-if __name__ == '__main__':

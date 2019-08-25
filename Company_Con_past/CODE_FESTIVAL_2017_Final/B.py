@@ -25,5 +25,12 @@ def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
 
+import collections
 
-if __name__ == '__main__':
+s = input()
+
+al = collections.Counter(s)
+if max(al["a"], al["b"], al["c"]) - min(al["a"], al["b"], al["c"]) <= 1:
+    print("YES")
+else:
+    print("NO")
