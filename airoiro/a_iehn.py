@@ -5,7 +5,7 @@ from itertools import permutations, combinations, product, accumulate, groupby
 from bisect import bisect_left, bisect_right, insort_left, insort_right
 from operator import itemgetter as ig
 sys.setrecursionlimit(10 ** 7)
-inf = 10 ** 20; INF = float("INF"); ans = 0; tmp = 0; cnt = 0; ansli = []; tmpli = []; candili = []; stillset = set()
+"""inf = 10 ** 20; INF = float("INF"); ans = 0; tmp = 0; cnt = 0; ansli = []; tmpli = []; candili = []; stillset = set()
 eps = 1.0 / 10 ** 10; mod = 10 ** 9 + 7
 dd = [(-1, 0), (0, 1), (1, 0), (0, -1)]; ddn = dd + [(-1, 1), (1, 1), (1, -1), (-1, -1)]; ddn9 = ddn + [(0, 0)]"""
 """for dx, dy in dd:
