@@ -14,11 +14,11 @@ dd = [(-1, 0), (0, 1), (1, 0), (0, -1)]; ddn = dd + [(-1, 1), (1, 1), (1, -1), (
 def wi(): return list(map(int, sys.stdin.readline().split()))
 def wip(): return [int(x) - 1 for x in sys.stdin.readline().split()]#WideIntPoint
 def ws(): return sys.stdin.readline().split()
-def i(): return int(sys.stdin.readline())
-def s(): return input()
+def si(): return int(sys.stdin.readline())
+def ss(): return input()
 def s_list(): return list(input())
-def hi(n): return [i() for _ in range(n)]
-def hs(n): return [s() for _ in range(n)]#HeightString
+def hi(n): return [si() for _ in range(n)]
+def hs(n): return [ss() for _ in range(n)]#HeightString
 def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def num_grid(n): return [[int(i) for i in sys.stdin.readline().split()[0]] for _ in range(n)]#NumberGrid
 def mip(n): return [wip() for _ in range(n)]
