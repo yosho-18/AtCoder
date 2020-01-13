@@ -26,8 +26,7 @@ def main():
     def ms(n): return [ws() for _ in range(n)]
     def grid(n): return [s_list() for _ in range(n)]
 
-    a, b = wi()
-    print(((b - 1) + (a - 1) - 1) // (a - 1))
+
 
 
 if __name__ == '__main__':
