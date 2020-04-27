@@ -25,3 +25,32 @@ def num_grid(n): return [[int(i) for i in sys.stdin.readline().split()[0]] for _
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
+
+def gcd(a,b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+def gcd_list(numbers):
+    return reduce(gcd, numbers)
+
+K = i()
+
+sigma = 0
+nums = [i for i in range(1, K + 1)]
+for abc in itertools.combinations_with_replacement(nums, 3):  # 重複組み合わせ，200H3
+    tmp = gcd_list(abc)
+    abc_set = set(abc)
+    sigma += int(tmp * (6 / (math.factorial(-len(abc_set) + 4))))
+
+print(sigma)
+
+"""
+[1, 2, 3]
+(1, 1)
+(1, 2)
+(1, 3)
+(2, 2)
+(2, 3)
+(3, 3)
+"""

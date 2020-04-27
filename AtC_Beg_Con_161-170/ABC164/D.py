@@ -22,25 +22,5 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-n = i()
-a = [0] + wi()
-listb = []
-zo = [0] * (n + 1)
-re = 1
-for i in range(n, 0, -1):
-    re = 2
-    s = 0
-    while True:
-        if i * re > n:
-            re -= 1
-            if (s + a[i]) % 2 == 1:
-                listb.append(i)
-                zo[i] = 1
-            break
-        else:
-            s += zo[i * re]
-            re += 1
+s = s()
 
-print(len(listb))
-for i in range(len(listb)):
-    print(listb[-i-1])

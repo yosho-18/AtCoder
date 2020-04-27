@@ -58,47 +58,54 @@ for i, t in enumerate(s):
 rgb = ["R", "G", "B"]
 s_start = 0
 t_start = 0
-
-a = [i for i in range(n)]
-
-def isOK(mid, point):
-    if mid >= point:
-        return True
-    else:
-        return False
-
-#汎用的な二分探索のテンプレ
-#条件を満たす最小値（ng,ok）
-def binary_search(the_list, point):  # pointより大きい最小値
-    ng = -1 #「index = 0」が条件を満たすこともあるので、初期値は -1
-    ok = len(the_list) #「index = a.size()-1」が条件を満たさないこともあるので、初期値は a.size()
-
-    #ok と ng のどちらが大きいかわからないことを考慮
-    while abs(ok - ng) > 1:
-        mid = the_list[(ok + ng) // 2]
-        if isOK(mid, point):
-            ok = (ok + ng) // 2
-        else:
-            ng = (ok + ng) // 2
-    if ok < len(the_list):
-        return the_list[ok], ok
-    else:
-        return "", ""
-
-def go(a):
-    if a == "":
-        return False
-    return True
+r_start = 0
+g_start = 0
+b_start = 0
 
 for i, first in enumerate(s):
-    s_len, t_len = length(first)
-    s_list, t_list = rgb_list(first)
+    a1 = 0
+    a2 = 0
+    if first == "R":
+        for g_i in range(g_start, len(g_list)):
+            if i < g_list[g_i]:
+                g_start = g_i
+                a1 = 1
+                break
+        for b_i in range(b_start, len(b_list)):
+            if i < b_list[b_i]:
+                b_start = b_i
+                a2 = 1
+                break
+        if a1 == 1 and a2 == 1:
+            ans += (len(g_list) - g_start) * (len(b_list) - b_start)
 
-    s_i, s_num = binary_search(s_list, i)
-    if go(s_i):
-        t_i, t_num = binary_search(t_list, i)
-        if go(t_num):
-            ans += (len(s_list) - s_num) * (len(t_list) - t_num)
+    elif first == "G":
+        for r_i in range(r_start, len(r_list)):
+            if i < r_list[r_i]:
+                r_start = r_i
+                a1 = 1
+                break
+        for b_i in range(b_start, len(b_list)):
+            if i < b_list[b_i]:
+                b_start = b_i
+                a2 = 1
+                break
+        if a1 == 1 and a2 == 1:
+            ans += (len(r_list) - r_start) * (len(b_list) - b_start)
+
+    else:
+        for g_i in range(g_start, len(g_list)):
+            if i < g_list[g_i]:
+                g_start = g_i
+                a1 = 1
+                break
+        for r_i in range(r_start, len(r_list)):
+            if i < r_list[r_i]:
+                r_start = r_i
+                a2 = 1
+                break
+        if a1 == 1 and a2 == 1:
+            ans += (len(g_list) - g_start) * (len(r_list) - r_start)
 
 for i, first in enumerate(s):
     interval = 1
