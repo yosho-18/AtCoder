@@ -22,28 +22,10 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-a, b, c, d = wi()
+n, k = wi()
 
-def gcd(a,b):
-    if b == 0:
-        return a
-    return gcd(b, a % b)
-
-def lcm_base(x, y):
-    return (x * y) // gcd(x, y)
-#532105071133627368
-
-s = ((a + c - 1) // c) * c
-t = (b // c) * c
-kosu1 = (t - s) // c + 1
-
-u = ((a + d - 1) // d) * d
-v = (b // d) * d
-kosu2 = (v - u) // d + 1
-
-e = lcm_base(c, d)
-w = ((a + e - 1) // e) * e
-x = (b // e) * e
-kosu3 = (x - w) // e + 1
-
-print(b - a + 1 - (kosu1 + kosu2 - kosu3))
+t = n % k
+if t > k / 2:
+    print(k - t)
+else:
+    print(t)

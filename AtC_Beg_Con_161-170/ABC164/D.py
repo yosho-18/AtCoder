@@ -24,3 +24,20 @@ def ms(n): return [ws() for _ in range(n)]
 
 s = s()
 
+mod = 2019
+num_int = 0
+mod_dict = defaultdict(int)
+mod_dict[num_int % mod] += 1
+s = s[::-1]
+t = 1
+for i in range(len(s)):
+    num_int += t * int(s[i])
+    num_int %= mod
+    t *= 10
+    t %= mod
+    mod_dict[num_int] += 1
+
+for i in mod_dict:
+    ans += ((mod_dict[i] - 1) * mod_dict[i]) // 2
+
+print(ans)

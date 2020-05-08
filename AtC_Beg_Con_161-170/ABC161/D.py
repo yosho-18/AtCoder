@@ -22,15 +22,38 @@ def mi(n): return [wi() for _ in range(n)]#MatrixInt
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 
-n = i()
-ab = mi(n)
+k = i()
+lunlun_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+tmp_list = lunlun_list
+tmp_tmp_list = []
+cnt = 9
+def lunlun(y):
+    x = y[-1]
+    if x == "0":
+        tmp_tmp_list.append(y + "0")
+        tmp_tmp_list.append(y + "1")
+        return 2
+    elif x == "9":
+        tmp_tmp_list.append(y + "8")
+        tmp_tmp_list.append(y + "9")
+        return 2
+    else:
+        x = int(x)
+        tmp_tmp_list.append(y + str(x - 1))
+        tmp_tmp_list.append(y + str(x))
+        tmp_tmp_list.append(y + str(x + 1))
+        return 3
 
-ab.sort(key=ig(1))
+while len(lunlun_list) < k:
+    for tmp in tmp_list:
+        cnt += lunlun(str(tmp))
+        if cnt >= k:
+            break
+    tmp_list = tmp_tmp_list
+    lunlun_list += tmp_list
+    tmp_tmp_list = []
 
-nowt = 0
-for i in range(n):
-    nowt += ab[i][0]
-    if nowt > ab[i][1]:
-        print("No")
-        exit()
-print("Yes")
+lunlun_list = [int(i) for i in lunlun_list]
+lunlun_list.sort()
+
+print(lunlun_list[k - 1])
