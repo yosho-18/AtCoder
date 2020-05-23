@@ -24,10 +24,31 @@ def num__grid(n): return [[int(i) for i in sys.stdin.readline().split()[0]] for 
 def mip(n): return [wip() for _ in range(n)]
 def ms(n): return [ws() for _ in range(n)]
 def grid(n): return [s_list() for _ in range(n)]
+# ''.join(s)
 
-a, b = wi()
-for x in range(10000):
-    if int(0.08 * x) == a and int(0.1 * x) == b:
-        print(x)
-        exit()
-print(-1)
+s = list(s())
+s_deque = deque(s)
+q = i()
+query = ms(q)
+
+cnt = 0
+v = ["r", "l"]
+vector = v[cnt]
+
+for qu in query:
+    if qu[0] == "1":
+        cnt += 1
+        vector = v[cnt % 2]
+    else:
+        if qu[1] == "1":
+            if vector == "r":
+                s_deque.appendleft(qu[2])
+            else:
+                s_deque.append(qu[2])
+        elif qu[1] == "2":
+            if vector == "r":
+                s_deque.append(qu[2])
+            else:
+                s_deque.appendleft(qu[2])
+
+print(''.join(s_deque)[::(-1) ** (cnt % 2)])
