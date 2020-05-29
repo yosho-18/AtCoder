@@ -8,7 +8,7 @@ heappush(notfirst, f[i][1])
 # デフォルトでは最小値を返すので，マイナスをつけて最大値を返すようにする
 donyoku -= heappop(notfirst)
 
-heappushpop(heap, item)  # pshuしてpopする
+heappushpop(heap, item)  # pushしてpopする
 
 import itertools
 accua = list(itertools.accumulate(a))
